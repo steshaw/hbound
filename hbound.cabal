@@ -1,0 +1,34 @@
+name:                hbound
+version:             0.1.0.0
+synopsis:            Initial project template from stack
+description:         Please see README.org
+homepage:            https://github.com/steshaw/hbound#readme
+license:             BSD2
+license-file:        LICENSE
+author:              Steven Shaw
+maintainer:          Steven Shaw <steven@steshaw.org>
+copyright:           Copyright (c) 2016, Steven Shaw
+category:            Development
+build-type:          Simple
+-- extra-source-files:
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     HBound, Lib
+  build-depends:       base >= 4.7 && < 5
+                     , comonad
+  default-language:    Haskell2010
+
+test-suite hbound-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , hbound
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/steshaw/hbound
